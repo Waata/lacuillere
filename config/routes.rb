@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :restaurants do 
+    collection do                       
+    resources :reviews, only: [:new, :create]
+ end
+end
+
+  # get 'category', to: "restaurants#category"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
